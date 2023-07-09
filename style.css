@@ -11,6 +11,43 @@ body {
     height: auto;
 }
 
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+nav ul li a:hover {
+    background: #fff;
+    color: #333;
+    border-radius: 5px;
+}
+
+main {
+    max-width: 900px;
+    margin: auto;
+    padding: 2rem;
+    background: #fff;
+}
+
 h1 {
     font-weight: 400;
     font-size: 2.5rem;
@@ -28,16 +65,6 @@ h2 {
 img {
     display: block;
     width: 100%;
-}
-
-main {
-    max-width: 900px;
-    margin: auto;
-    box-shadow: 30px 0px 40px rgba(0, 0, 0, 0.1), -30px 0px 40px rgba(0, 0, 0, 0.1)
-}
-
-#landing {
-    background: #fff;
 }
 
 #landing-text {
@@ -98,6 +125,8 @@ main {
 .caption {
     padding: 0.8rem;
     text-align: center;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
 }
 
 footer {
@@ -117,9 +146,8 @@ footer p a {
     color: red;
 }
 
-/*Screen Sizes 500px +*/
-
-@media(min-width: 31.25rem) {
+/* Screen Sizes 500px + */
+@media (min-width: 31.25rem) {
     #landing {
         display: flex;
         height: 100%;
@@ -134,11 +162,34 @@ footer p a {
     }
 }
 
-/*Screen Sizes 700px +*/
-
-@media(min-width: 43.75rem) {
+/* Screen Sizes 700px + */
+@media (min-width: 43.75rem) {
     .btn {
         padding: 1rem 3rem;
     }
+}
+
+img.active {
+    transform: translateY(0);
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+.caption.active {
+    transform: translateX(0);
+    opacity: 1;
+    transition: all 0.5s;
+}
+
+img {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.caption {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.5s, transform 0.5s;
 }
 
